@@ -98,31 +98,36 @@ function generarFotos() {
     const contenedorScroll = document.getElementById("contenedor-scroll");
 
     nombresDeArchivos.forEach((nombre, index) => {
+        // Creamos el contenedor de la foto (el marco blanco)
         const div = document.createElement("div");
         div.className = "foto-item";
+        // Mantenemos tu rotación aleatoria
         div.style.setProperty('--r', `${(Math.random() * 6 - 3)}deg`);
-
-        const img = document.createElement("img");
-        img.src = `assets/${encodeURI(nombre)}`;
-        img.onerror = () => console.error("No se pudo cargar: " + nombre); 
-        
-        div.appendChild(img);
         galeria.appendChild(div);
 
+        // Programamos la aparición individual
         setTimeout(() => {
-            div.classList.add("aparecer");
+            const img = document.createElement("img");
             
-            // EL PUNTO MEDIO: -220px. 
-            // Ni se tapa por arriba ni se hunde por abajo.
-            const offset = div.offsetTop - 220; 
-            contenedorScroll.scrollTo({ top: offset, behavior: 'smooth' });
-            
+            // Cuando la imagen esté cargada en la memoria de la tele, la enseñamos
+            img.onload = () => {
+                div.classList.add("aparecer");
+                // Tu offset mágico de -220 que ya funcionaba
+                const offset = div.offsetTop - 220; 
+                contenedorScroll.scrollTo({ top: offset, behavior: 'smooth' });
+            };
+
+            // Aquí es donde ocurre la magia: solo pedimos la foto AHORA
+            img.src = `./assets/${nombre}`;
+            div.appendChild(img);
+
+            // Si es la última, lanzamos la dedicatoria
             if (index === nombresDeArchivos.length - 1) {
-                setTimeout(escribirDedicatoria, 3000);
+                setTimeout(escribirDedicatoria, 4000);
             }
 
-        }, 1000 + (index * 2222)); 
-    } );
+        }, 1000 + (index * 2222)); // Mantenemos tus 3 minutos exactos
+    });
 }
 
 let letraDedi = 0;
