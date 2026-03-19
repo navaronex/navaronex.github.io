@@ -153,28 +153,18 @@ function generarFotos() {
 let letraDedi = 0;
 function escribirDedicatoria() {
     const contenedorDedi = document.getElementById("dedicatoria");
-    const contenedorScroll = document.getElementById("contenedor-scroll");
     
     if (letraDedi < textoDedicatoria.length) {
+        // Añadimos la letra
         contenedorDedi.innerHTML += textoDedicatoria.charAt(letraDedi);
         letraDedi++;
 
-        // --- SCROLL INTELIGENTE ---
-        // Solo baja automáticamente si el usuario está cerca del final.
-        // Si el usuario sube manualmente para leer, el código NO le obligará a bajar.
-        const estaAlFinal = (contenedorScroll.scrollHeight - contenedorScroll.scrollTop) <= (contenedorScroll.clientHeight + 100);
-        
-        if (estaAlFinal) {
-            contenedorScroll.scrollTo({ 
-                top: contenedorScroll.scrollHeight, 
-                behavior: 'smooth' 
-            });
-        }
-        // ---------------------------
+        // HEMOS QUITADO EL SCROLLTO. 
+        // Ahora la página se queda quieta y tú mandas sobre la pantalla.
 
-        setTimeout(escribirDedicatoria, 60); // Un pelín más lento para que dé tiempo a leer
+        setTimeout(escribirDedicatoria, 50); 
     } else {
-        // Al terminar, lanzamos los confetis finales
+        // Confeti final al terminar de escribir
         confetti({ 
             particleCount: 400, 
             spread: 160, 
