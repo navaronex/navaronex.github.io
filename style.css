@@ -64,17 +64,36 @@ body, html {
     width: 100%; max-width: 800px; margin: 0 auto;
 }
 
+/* BUSCA ESTO EN TU CSS Y CÁMBIALO TOTALMENTE */
 .foto-item {
-    width: 70%; 
-    max-width: 420px; 
-    background: white; padding: 10px 10px 45px 10px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.9);
-    opacity: 0; transform: scale(0.9) translateY(40px);
-    transition: all 0.9s ease-out;
+    background: white;
+    /* REDUCIMOS EL ANCHO BASE Y MÁXIMO */
+    width: 280px;  /* Antes quizás tenías 320px o más. Pruébalo con 280px. */
+    max-width: 80%; /* Si la tele es pequeña, esto asegura que no ocupe toda la pantalla */
+    
+    /* Mantenemos tu rotación y el padding de la Polaroid */
+    padding: 15px 15px 40px 15px; 
+    border-radius: 4px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    
+    transform: rotate(var(--r)) translateY(50px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* ESTO ES VITAL: Asegura que la foto no se escape del marco */
+    box-sizing: border-box; 
+    
+    /* Un pequeño truco para centrarlo si se desmadra */
+    margin-left: auto;
+    margin-right: auto;
 }
-/* Este es el truco mágico para la primera foto */
-.foto-item:first-child {
-    margin-top: 100px !important;
+
+/* Y busca también esto para que la imagen de dentro se adapte */
+.foto-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid #eee; /* Un bordecito fino para que se vea la foto */
 }
 
 /* El resto del contenedor se mantiene igual */
