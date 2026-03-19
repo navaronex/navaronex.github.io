@@ -107,7 +107,8 @@ function cargarGaleria() {
         // Creamos la imagen
         const img = document.createElement("img");
         // Construimos la ruta exacta usando el nombre de la lista
-        img.src = `assets/${nombreArchivo}`; 
+        // Busca esta línea en tu cargarGaleria:
+        img.src = `assets/${encodeURI(nombreArchivo)}`;
         img.alt = "Recuerdo inolvidable";
         img.loading = "lazy"; // Esto ayuda a que la página no se bloquee
 
