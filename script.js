@@ -42,13 +42,13 @@ const nombresDeArchivos = [
     "PHOTO-2026-03-19-12-05-19.jpg"
 ];
 
-const textoDedicatoria = "Papá, estas fotos son solo una pequeña muestra de la suerte que tengo de tenerte. Gracias por cada consejo, por cada risa y por estar siempre ahí. Eres nuestro ejemplo a seguir. ¡Te queremos muchísimo!";
+const textoDedicatoria = "Papá, no sabes como me gustaría poder darte mucho más que esto, pero... Quiero que sepas que estas fotos son solo una pequeña muestra del amor que te tenemos y lo afortunado que me siento de tenerte a mi lado. Gracias por cada consejo, por cada risa, por cada lección, por acompañarme a mis aficiones desde siempre, por apoyarme no solo moral sino económicamente en todo aquello que persigo, por invitarme a comer, por tomarnos algo de beber, por ser como eres..., por cada regañina que sé que no siempre será lo que quiera, pero sí lo que necesite; y por estar siempre ahí. Eres nuestro ejemplo a seguir, mi orgullo, y mi inspiración a poder ser algún día como tú. Creeme cuando yo, Dylan, digo que lo que más deseo por encima de todo es la felicidad de mi familia, y que algún día puedas sentirte orgulloso del bebé que criaste... A palos y gritos, pero bien criado. Eres junto a Mamá e Izan, mi mejor amigo, mi padre, mi confidente... ¡Te queremos muchísimo!";
 
 const terminalLineas = [
-    "user@papa:~$ sudo ./open_heart.sh",
+    "user@papa:~$ sudo ./abriendo_tu_corazon.sh",
     "> Sincronizando recuerdos...",
-    "> Perfeccionando márgenes finales...",
-    "> Todo listo. Disfruta el viaje."
+    "> Analizando fragmentos de memoria...",
+    "> Todo listo. FELIZ DÍA DEL PADRE 2026."
 ];
 
 let linea = 0, letra = 0;
