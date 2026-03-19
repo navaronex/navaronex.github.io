@@ -1,35 +1,25 @@
-// --- COPIA ESTO ---
-
-// ¡Aquí está la lista gigante de tus 81 archivos reales, ya hecha para ti!
-// He revisado tus capturas y he generado los 81 nombres.
 const nombresDeArchivos = [
-    // 
     "PHOTO-2026-03-19-12-05-09 2.jpg", "PHOTO-2026-03-19-12-05-09.jpg",
     "PHOTO-2026-03-19-12-05-10 2.jpg", "PHOTO-2026-03-19-12-05-10 3.jpg", 
     "PHOTO-2026-03-19-12-05-10 4.jpg", "PHOTO-2026-03-19-12-05-10 5.jpg", 
     "PHOTO-2026-03-19-12-05-10 6.jpg", "PHOTO-2026-03-19-12-05-10 7.jpg", 
     "PHOTO-2026-03-19-12-05-10 8.jpg", "PHOTO-2026-03-19-12-05-10.jpg",
     "PHOTO-2026-03-19-12-05-11 2.jpg", "PHOTO-2026-03-19-12-05-11 3.jpg", 
-    "PHOTO-2026-03-19-12-05-11.jpg","PHOTO-2026-03-19-12-05-12 2.jpg", 
+    "PHOTO-2026-03-19-12-05-11.jpg", "PHOTO-2026-03-19-12-05-12 2.jpg", 
     "PHOTO-2026-03-19-12-05-12 3.jpg", "PHOTO-2026-03-19-12-05-12 4.jpg", 
     "PHOTO-2026-03-19-12-05-12 5.jpg", "PHOTO-2026-03-19-12-05-12 6.jpg", 
-    "PHOTO-2026-03-19-12-05-12.jpg", //19
-
-    // 
-    "PHOTO-2026-03-19-12-05-13 2.jpg", "PHOTO-2026-03-19-12-05-13 3.jpg", 
-    "PHOTO-2026-03-19-12-05-13 4.jpg", "PHOTO-2026-03-19-12-05-13 5.jpg", 
-    "PHOTO-2026-03-19-12-05-13 6.jpg", "PHOTO-2026-03-19-12-05-13.jpg",
-    "PHOTO-2026-03-19-12-05-14 2.jpg", "PHOTO-2026-03-19-12-05-14 3.jpg", 
-    "PHOTO-2026-03-19-12-05-14 4.jpg", "PHOTO-2026-03-19-12-05-14 5.jpg", 
-    "PHOTO-2026-03-19-12-05-14 6.jpg", "PHOTO-2026-03-19-12-05-14.jpg",
-    "PHOTO-2026-03-19-12-05-15 2.jpg", "PHOTO-2026-03-19-12-05-15 3.jpg", 
-    "PHOTO-2026-03-19-12-05-15 4.jpg", "PHOTO-2026-03-19-12-05-15 5.jpg", 
-    "PHOTO-2026-03-19-12-05-15 6.jpg", "PHOTO-2026-03-19-12-05-15 7.jpg", 
-    "PHOTO-2026-03-19-12-05-15 8.jpg", "PHOTO-2026-03-19-12-05-15 9.jpg", 
-    "PHOTO-2026-03-19-12-05-15.jpg", //21
-
-    //
-    "PHOTO-2026-03-19-12-05-16 2.jpg", "PHOTO-2026-03-19-12-05-16 3.jpg",
+    "PHOTO-2026-03-19-12-05-12.jpg", "PHOTO-2026-03-19-12-05-13 2.jpg", 
+    "PHOTO-2026-03-19-12-05-13 3.jpg", "PHOTO-2026-03-19-12-05-13 4.jpg", 
+    "PHOTO-2026-03-19-12-05-13 5.jpg", "PHOTO-2026-03-19-12-05-13 6.jpg", 
+    "PHOTO-2026-03-19-12-05-13.jpg", "PHOTO-2026-03-19-12-05-14 2.jpg", 
+    "PHOTO-2026-03-19-12-05-14 3.jpg", "PHOTO-2026-03-19-12-05-14 4.jpg", 
+    "PHOTO-2026-03-19-12-05-14 5.jpg", "PHOTO-2026-03-19-12-05-14 6.jpg", 
+    "PHOTO-2026-03-19-12-05-14.jpg", "PHOTO-2026-03-19-12-05-15 2.jpg", 
+    "PHOTO-2026-03-19-12-05-15 3.jpg", "PHOTO-2026-03-19-12-05-15 4.jpg", 
+    "PHOTO-2026-03-19-12-05-15 5.jpg", "PHOTO-2026-03-19-12-05-15 6.jpg", 
+    "PHOTO-2026-03-19-12-05-15 7.jpg", "PHOTO-2026-03-19-12-05-15 8.jpg", 
+    "PHOTO-2026-03-19-12-05-15 9.jpg", "PHOTO-2026-03-19-12-05-15.jpg",
+    "PHOTO-2026-03-19-12-05-16 2.jpg", "PHOTO-2026-03-19-12-05-16 3.jpg", 
     "PHOTO-2026-03-19-12-05-16 4.jpg", "PHOTO-2026-03-19-12-05-16 5.jpg", 
     "PHOTO-2026-03-19-12-05-16 6.jpg", "PHOTO-2026-03-19-12-05-16 7.jpg", 
     "PHOTO-2026-03-19-12-05-16 8.jpg", "PHOTO-2026-03-19-12-05-16 9.jpg", 
@@ -47,132 +37,106 @@ const nombresDeArchivos = [
     "PHOTO-2026-03-19-12-05-18 10.jpg", "PHOTO-2026-03-19-12-05-18 11.jpg", 
     "PHOTO-2026-03-19-12-05-18 12.jpg", "PHOTO-2026-03-19-12-05-18 13.jpg", 
     "PHOTO-2026-03-19-12-05-18 14.jpg", "PHOTO-2026-03-19-12-05-18 15.jpg", 
-    "PHOTO-2026-03-19-12-05-18.jpg", //37
-
-    //
-    "PHOTO-2026-03-19-12-05-19 2.jpg", "PHOTO-2026-03-19-12-05-19 3.jpg", 
-    "PHOTO-2026-03-19-12-05-19 4.jpg", "PHOTO-2026-03-19-12-05-19.jpg" //4
-    //19+21+37+4 = 81
-
-    // Total: 81 fotos generadas.
+    "PHOTO-2026-03-19-12-05-18.jpg", "PHOTO-2026-03-19-12-05-19 2.jpg", 
+    "PHOTO-2026-03-19-12-05-19 3.jpg", "PHOTO-2026-03-19-12-05-19 4.jpg", 
+    "PHOTO-2026-03-19-12-05-19.jpg"
 ];
 
-const mensaje = [
-    "> Ejecutando programa...",
-    "> Cargando recuerdos...",
-    "> Analizando...",
-    "",
-    "> Resultado:",
-    "> El mejor padre del mundo."
+const textoDedicatoria = "Papá, estas fotos son solo una pequeña muestra de la suerte que tengo de tenerte. Gracias por cada consejo, por cada risa y por estar siempre ahí. Eres nuestro ejemplo a seguir. ¡Te queremos muchísimo!";
+
+const terminalLineas = [
+    "user@papa:~$ sudo ./open_heart.sh",
+    "> Sincronizando recuerdos...",
+    "> Perfeccionando márgenes finales...",
+    "> Todo listo. Disfruta el viaje."
 ];
 
-let linea = 0;
-let letra = 0;
+let linea = 0, letra = 0;
+const contenedorTerminal = document.getElementById("texto-terminal");
 
-function escribir() {
-    const contenedorTexto = document.getElementById("texto");
-    
-    // Seguridad: Si por alguna razón el HTML no ha cargado el div, esperamos 100ms más
-    if (!contenedorTexto) {
-        setTimeout(escribir, 100);
-        return;
-    }
-
-    if (linea < mensaje.length) {
-        if (letra < mensaje[linea].length) {
-            contenedorTexto.innerHTML += mensaje[linea].charAt(letra);
+function escribirTerminal() {
+    if (linea < terminalLineas.length) {
+        if (letra < terminalLineas[linea].length) {
+            contenedorTerminal.innerHTML += terminalLineas[linea].charAt(letra);
             letra++;
-            setTimeout(escribir, 40);
+            setTimeout(escribirTerminal, 25);
         } else {
-            contenedorTexto.innerHTML += "<br>";
-            linea++;
-            letra = 0;
-            setTimeout(escribir, 500);
+            contenedorTerminal.innerHTML += "<br>";
+            linea++; letra = 0;
+            setTimeout(escribirTerminal, 400);
         }
     } else {
-        setTimeout(mostrarPagina, 1500);
+        mostrarBarra();
     }
 }
 
-function cargarGaleria() {
-    const galeria = document.getElementById("galeria");
-    if (!galeria) return;
-
-    nombresDeArchivos.forEach(nombreArchivo => {
-        const div = document.createElement("div");
-        div.className = "foto-item";
-
-        const img = document.createElement("img");
-        
-        // Usamos encodeURI para los espacios y un parámetro de tiempo 
-        // para evitar que el móvil use una versión vieja "cacheada"
-        const rutaLimpia = encodeURI(nombreArchivo);
-        img.src = `assets/${rutaLimpia}`; 
-        
-        img.alt = "Recuerdo";
-        img.loading = "lazy";
-
-        // Si la imagen falla, esto te avisará en la consola del navegador
-        img.onerror = function() {
-            console.error("No se pudo cargar: " + nombreArchivo);
-        };
-
-        div.appendChild(img);
-        galeria.appendChild(div);
-    });
+function mostrarBarra() {
+    document.getElementById("container-barra").style.display = "block";
+    let prog = 0;
+    const barra = document.getElementById("progreso");
+    const intv = setInterval(() => {
+        prog += 2;
+        if (prog >= 100) {
+            prog = 100; clearInterval(intv);
+            document.getElementById("btnIniciar").style.display = "block";
+        }
+        barra.style.width = prog + "%";
+        document.getElementById("porcentaje").innerText = prog + "%";
+    }, 40);
 }
 
-function mostrarPagina() {
-    const terminal = document.getElementById("terminal");
-    const pagina = document.getElementById("pagina");
-    
-    if (terminal && pagina) {
-        cargarGaleria(); // <--- Llamamos a la carga de fotos aquí
-        
-        terminal.style.display = "none";
-        // Asegúrate de usar 'block' para que el mosaico de CSS funcione bien
-        pagina.style.display = "block"; 
-        
-        setTimeout(() => {
-            pagina.style.opacity = "1";
-            document.body.style.overflow = "auto";
-        }, 50);
-    }
-}
-
-// Asegurar el inicio si o si
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', escribir);
-} else {
-    escribir();
-}
-
-// Función para que las fotos parezcan un poco desordenadas (estilo álbum real)
-function decorarFotos() {
-    const fotos = document.querySelectorAll('.foto-item');
-    fotos.forEach(foto => {
-        const randomRot = (Math.random() * 4 - 2).toFixed(2); // Rotación entre -2 y 2 grados
-        foto.style.transform = `rotate(${randomRot}deg)`;
-    });
-}
-
-// Lógica del botón "Volver Arriba"
-window.onscroll = function() {
-    const btn = document.getElementById("btnArriba");
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
-};
-
-document.getElementById("btnArriba")?.addEventListener("click", () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+document.getElementById("btnIniciar").addEventListener("click", () => {
+    document.getElementById("musica").play();
+    document.getElementById("seccion-terminal").style.display = "none";
+    document.getElementById("pagina").style.display = "flex";
+    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+    generarFotos();
 });
 
-// Modificamos ligeramente tu función mostrarPagina para que llame a la decoración
-const originalMostrarPagina = mostrarPagina;
-mostrarPagina = function() {
-    originalMostrarPagina();
-    setTimeout(decorarFotos, 100); // Decoramos después de cargar
+function generarFotos() {
+    const galeria = document.getElementById("galeria");
+    const contenedorScroll = document.getElementById("contenedor-scroll");
+
+    nombresDeArchivos.forEach((nombre, index) => {
+        const div = document.createElement("div");
+        div.className = "foto-item";
+        div.style.setProperty('--r', `${(Math.random() * 6 - 3)}deg`);
+
+        const img = document.createElement("img");
+        img.src = `assets/${encodeURI(nombre)}`;
+        
+        div.appendChild(img);
+        galeria.appendChild(div);
+
+        setTimeout(() => {
+            div.classList.add("aparecer");
+            
+            // EL PUNTO MEDIO: -220px. 
+            // Ni se tapa por arriba ni se hunde por abajo.
+            const offset = div.offsetTop - 220; 
+            contenedorScroll.scrollTo({ top: offset, behavior: 'smooth' });
+            
+            if (index === nombresDeArchivos.length - 1) {
+                setTimeout(escribirDedicatoria, 3000);
+            }
+
+        }, 1000 + (index * 2222)); 
+    } );
 }
+
+let letraDedi = 0;
+function escribirDedicatoria() {
+    const contenedorDedi = document.getElementById("dedicatoria");
+    const contenedorScroll = document.getElementById("contenedor-scroll");
+    
+    if (letraDedi < textoDedicatoria.length) {
+        contenedorDedi.innerHTML += textoDedicatoria.charAt(letraDedi);
+        letraDedi++;
+        contenedorScroll.scrollTo({ top: contenedorScroll.scrollHeight, behavior: 'smooth' });
+        setTimeout(escribirDedicatoria, 70);
+    } else {
+        confetti({ particleCount: 300, spread: 150, origin: { y: 0.8 } });
+    }
+}
+
+escribirTerminal();
