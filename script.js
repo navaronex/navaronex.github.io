@@ -103,7 +103,7 @@ function generarFotos() {
         div.style.setProperty('--r', `${(Math.random() * 6 - 3)}deg`);
 
         const img = document.createElement("img");
-        img.src = `./assets/${nombre}`;
+        img.src = "assets/" + nombre;
         img.onerror = () => console.error("No se pudo cargar: " + nombre); 
         
         div.appendChild(img);
