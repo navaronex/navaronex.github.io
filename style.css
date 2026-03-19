@@ -92,7 +92,10 @@ body, html {
     border: 1px solid #ddd;
 }
 
-#seccion-final { padding: 150px 40px 1000px 40px; text-align: center; }
+#seccion-final { 
+    padding: 150px 40px 800px 40px; /* 800px de aire al final para que el scroll respire */
+    text-align: center; 
+}
 #dedicatoria {
     font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 4vw, 2.1rem);
     line-height: 1.7; color: white;
