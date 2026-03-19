@@ -158,11 +158,29 @@ function escribirDedicatoria() {
     if (letraDedi < textoDedicatoria.length) {
         contenedorDedi.innerHTML += textoDedicatoria.charAt(letraDedi);
         letraDedi++;
-        contenedorScroll.scrollTo({ top: contenedorScroll.scrollHeight, behavior: 'smooth' });
-        setTimeout(escribirDedicatoria, 70);
+
+        // --- SCROLL INTELIGENTE ---
+        // Solo baja automáticamente si el usuario está cerca del final.
+        // Si el usuario sube manualmente para leer, el código NO le obligará a bajar.
+        const estaAlFinal = (contenedorScroll.scrollHeight - contenedorScroll.scrollTop) <= (contenedorScroll.clientHeight + 100);
+        
+        if (estaAlFinal) {
+            contenedorScroll.scrollTo({ 
+                top: contenedorScroll.scrollHeight, 
+                behavior: 'smooth' 
+            });
+        }
+        // ---------------------------
+
+        setTimeout(escribirDedicatoria, 60); // Un pelín más lento para que dé tiempo a leer
     } else {
-        confetti({ particleCount: 300, spread: 150, origin: { y: 0.8 } });
+        // Al terminar, lanzamos los confetis finales
+        confetti({ 
+            particleCount: 400, 
+            spread: 160, 
+            origin: { y: 0.7 },
+            colors: ['#fbbf24', '#ffffff', '#27c93f'] 
+        });
     }
 }
-
 escribirTerminal();
