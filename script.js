@@ -97,37 +97,52 @@ function generarFotos() {
     const galeria = document.getElementById("galeria");
     const contenedorScroll = document.getElementById("contenedor-scroll");
 
-    nombresDeArchivos.forEach((nombre, index) => {
-        // Creamos el contenedor de la foto (el marco blanco)
+    // Función interna para cargar una sola foto
+    function cargarFotoIndividual(index) {
+        if (index >= nombresDeArchivos.length) {
+            // Si ya no hay más fotos, lanzamos la dedicatoria
+            setTimeout(escribirDedicatoria, 4000);
+            return;
+        }
+
+        const nombre = nombresDeArchivos[index];
         const div = document.createElement("div");
         div.className = "foto-item";
-        // Mantenemos tu rotación aleatoria
         div.style.setProperty('--r', `${(Math.random() * 6 - 3)}deg`);
-        galeria.appendChild(div);
-
-        // Programamos la aparición individual
-        setTimeout(() => {
-            const img = document.createElement("img");
+        
+        const img = document.createElement("img");
+        
+        img.onload = () => {
+            // Solo cuando la imagen está LISTA la metemos en el HTML
+            galeria.appendChild(div);
+            div.appendChild(img);
             
-            // Cuando la imagen esté cargada en la memoria de la tele, la enseñamos
-            img.onload = () => {
+            // Forzamos un micro-segundo para que el navegador la pinte
+            setTimeout(() => {
                 div.classList.add("aparecer");
-                // Tu offset mágico de -220 que ya funcionaba
                 const offset = div.offsetTop - 220; 
                 contenedorScroll.scrollTo({ top: offset, behavior: 'smooth' });
-            };
+                
+                // ESPERAMOS el tiempo exacto antes de llamar a la siguiente foto
+                setTimeout(() => {
+                    cargarFotoIndividual(index + 1);
+                }, 2222); 
+            }, 50);
+        };
 
-            // Aquí es donde ocurre la magia: solo pedimos la foto AHORA
-            img.src = `./assets/${nombre}`;
-            div.appendChild(img);
+        // Si una foto falla, que pase a la siguiente para no bloquear todo
+        img.onerror = () => {
+            console.error("Error cargando: " + nombre);
+            cargarFotoIndividual(index + 1);
+        };
 
-            // Si es la última, lanzamos la dedicatoria
-            if (index === nombresDeArchivos.length - 1) {
-                setTimeout(escribirDedicatoria, 4000);
-            }
+        img.src = `./assets/${nombre}`;
+    }
 
-        }, 1000 + (index * 2222)); // Mantenemos tus 3 minutos exactos
-    });
+    // Arrancamos la primera foto tras 1 segundo
+    setTimeout(() => {
+        cargarFotoIndividual(0);
+    }, 1000);
 }
 
 let letraDedi = 0;
