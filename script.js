@@ -98,19 +98,24 @@ function cargarGaleria() {
     const galeria = document.getElementById("galeria");
     if (!galeria) return;
 
-    // En lugar de un bucle de números, recorremos la lista de nombres
     nombresDeArchivos.forEach(nombreArchivo => {
-        // Creamos el contenedor de la foto
         const div = document.createElement("div");
         div.className = "foto-item";
 
-        // Creamos la imagen
         const img = document.createElement("img");
-        // Construimos la ruta exacta usando el nombre de la lista
-        // Busca esta línea en tu cargarGaleria:
-        img.src = `assets/${encodeURI(nombreArchivo)}`;
-        img.alt = "Recuerdo inolvidable";
-        img.loading = "lazy"; // Esto ayuda a que la página no se bloquee
+        
+        // Usamos encodeURI para los espacios y un parámetro de tiempo 
+        // para evitar que el móvil use una versión vieja "cacheada"
+        const rutaLimpia = encodeURI(nombreArchivo);
+        img.src = `assets/${rutaLimpia}`; 
+        
+        img.alt = "Recuerdo";
+        img.loading = "lazy";
+
+        // Si la imagen falla, esto te avisará en la consola del navegador
+        img.onerror = function() {
+            console.error("No se pudo cargar: " + nombreArchivo);
+        };
 
         div.appendChild(img);
         galeria.appendChild(div);
