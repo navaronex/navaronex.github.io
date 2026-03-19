@@ -1,0 +1,165 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+:root {
+    --bg-color-dark: #0f172a; /* Azul muy oscuro para terminal */
+    --bg-color-final: #1e293b; /* Azul marino profundo para página final */
+    --accent-gold: #fbbf24; /* Dorado elegante */
+    --accent-red: #ef4444; /* Rojo para el corazón */
+    --text-color-light: #f3f4f6; /* Crema muy claro para texto */
+    --text-color-muted: #9ca3af; /* Gris sutil */
+    --terminal-green: #22c55e; /* Verde Matrix */
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-color-dark);
+    color: var(--text-color-light);
+    overflow: hidden; /* Evita scroll durante la animación */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- TERMINAL (Se mantiene funcional, pero más elegante) --- */
+#terminal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--terminal-green);
+    font-size: 20px;
+    background: var(--bg-color-dark);
+    z-index: 10;
+}
+
+#texto {
+    border-right: 2px solid var(--terminal-green);
+    padding-right: 5px;
+    animation: blink 1s infinite;
+    white-space: pre-wrap;
+    text-shadow: 0 0 5px var(--terminal-green);
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* --- PÁGINA FINAL DECORADA --- */
+#pagina {
+    opacity: 0;
+    transition: opacity 2.5s ease;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color-final);
+    /* Añadir textura de fondo sutil (opcional, borra si no te gusta) */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5Y2EzYWYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6bTIwIDIwaDIwdjIwSDIWMjB6TTAgMjBoMjB2MjBIMFYyMHoyMCAwaDIwdjIwSDIwVjB6Ii8+PC9nPjwvZz48L3N2Zz4=');
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+/* Elementos decorativos (Corona y Títulos) */
+.header-decor {
+    margin-bottom: 20px;
+}
+
+.gold-icon {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.5));
+}
+
+.title-final {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--text-color-light);
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.heart-icon {
+    color: var(--accent-red);
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.subtitle-final {
+    font-size: 1.2rem;
+    color: var(--text-color-muted);
+    font-weight: 400;
+    margin: 0 0 40px 0;
+    max-width: 600px;
+}
+
+/* --- MARCOS DE FOTOS ESTILO 'MEMORIA' --- */
+.fotos-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.foto-frame {
+    background: #fff; /* Marco blanco como polaroid */
+    padding: 12px;
+    padding-bottom: 45px; /* Espacio abajo para escribir (ilusión) */
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
+    position: relative;
+    /* Rotación aleatoria para que parezcan tiradas */
+}
+
+.foto-frame:nth-child(1) { transform: rotate(-3deg); }
+.foto-frame:nth-child(2) { transform: rotate(1deg); }
+.foto-frame:nth-child(3) { transform: rotate(2deg); }
+
+.foto-frame img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    filter: sepia(20%) contrast(110%); /* Toque vintage suave */
+}
+
+/* Efecto Hover en las fotos */
+.foto-frame:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    box-shadow: 0 15px 35px rgba(251, 191, 36, 0.4);
+    z-index: 6; /* Para que suba sobre las otras */
+}
+
+/* Texto decorativo en el pie de la foto (opcional) */
+.foto-frame::after {
+    content: "Recuerdos Inolvidables";
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+/* Pie de página */
+.footer-decor {
+    margin-top: 50px;
+    font-size: 0.8rem;
+    color: var(--text-color-muted);
+}
