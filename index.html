@@ -2,36 +2,51 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz día del padre | Tarjeta Digital</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para el mejor Papá</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Montserrat:wght@700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="terminal">
-        <div id="texto"></div>
-    </div>
+    <audio id="musica" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
 
-    <div id="pagina" style="display: none;">
-        <div class="header-decor">
-            <i class="fas fa-crown gold-icon"></i> </div>
-        
-        <h1 class="title-final">Feliz día del padre <span class="heart-icon">❤️</span></h1>
-        <p class="subtitle-final">Gracias por todo lo que haces por mí, Papá.</p>
-
-        <div id="galeria" class="mosaico-fotos"></div>
-
-        <button id="btnArriba" title="Volver al inicio"><i class="fas fa-arrow-up"></i></button>
-        
-        <div class="footer-decor">
-            <p>Hecho con amor en [Año actual]</p>
+    <div id="seccion-terminal">
+        <div class="mac-window">
+            <div class="mac-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="mac-title">bash — memory_decoder.sh</span>
+            </div>
+            <div class="mac-body">
+                <div id="texto-terminal"></div>
+                <div id="container-barra" style="display:none;">
+                    <div class="progress-bar"><div id="progreso"></div></div>
+                    <span id="porcentaje">0%</span>
+                </div>
+            </div>
+            <button id="btnIniciar" style="display:none;">INICIAR EXPERIENCIA ❤️</button>
         </div>
     </div>
 
-    <script src="script.js" defer></script>
+    <div id="pagina" style="display: none;">
+        <div class="stars"></div>
+        
+        <header class="main-header">
+            <h1 class="glow-text">Para el mejor Padre del Mundo</h1>
+            <p class="fade-in-text">81 momentos que definen nuestra historia</p>
+        </header>
+
+        <div id="contenedor-scroll">
+            <div id="galeria"></div>
+            <div id="seccion-final">
+                <div id="dedicatoria"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
