@@ -93,8 +93,11 @@ body, html {
 }
 
 #seccion-final { 
-    padding: 150px 40px 800px 40px; /* 800px de aire al final para que el scroll respire */
-    text-align: center; 
+    /* 50px arriba para que no pegue con las fotos */
+    /* 1200px abajo para que puedas hacer scroll infinito hacia abajo si quieres */
+    padding: 50px 40px 1200px 40px; 
+    text-align: center;
+    min-height: 100vh; /* Asegura que la sección ocupe toda la pantalla */
 }
 #dedicatoria {
     font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 4vw, 2.1rem);
