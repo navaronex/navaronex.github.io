@@ -97,10 +97,15 @@ function generarFotos() {
     const galeria = document.getElementById("galeria");
     const contenedorScroll = document.getElementById("contenedor-scroll");
 
-    // Función interna para cargar una sola foto
+    // TRUCO MAESTRO: Precargamos las primeras 10 fotos en memoria invisible
+    // Esto se hace mientras el usuario ve el botón de inicio
+    nombresDeArchivos.slice(0, 10).forEach(nombre => {
+        const prefetch = new Image();
+        prefetch.src = `./assets/${nombre}`;
+    });
+
     function cargarFotoIndividual(index) {
         if (index >= nombresDeArchivos.length) {
-            // Si ya no hay más fotos, lanzamos la dedicatoria
             setTimeout(escribirDedicatoria, 4000);
             return;
         }
@@ -112,37 +117,37 @@ function generarFotos() {
         
         const img = document.createElement("img");
         
+        // Forzamos a que la imagen no tenga carga perezosa del navegador
+        img.loading = "eager"; 
+        
         img.onload = () => {
-            // Solo cuando la imagen está LISTA la metemos en el HTML
             galeria.appendChild(div);
             div.appendChild(img);
             
-            // Forzamos un micro-segundo para que el navegador la pinte
+            // Un pelín más de tiempo para que el Chromecast "dibuje" la foto
             setTimeout(() => {
                 div.classList.add("aparecer");
                 const offset = div.offsetTop - 220; 
                 contenedorScroll.scrollTo({ top: offset, behavior: 'smooth' });
                 
-                // ESPERAMOS el tiempo exacto antes de llamar a la siguiente foto
+                // Tiempo de espera entre fotos (2.2 segundos)
                 setTimeout(() => {
                     cargarFotoIndividual(index + 1);
                 }, 2222); 
-            }, 50);
+            }, 100); // Aumentamos a 100ms para asegurar el renderizado
         };
 
-        // Si una foto falla, que pase a la siguiente para no bloquear todo
         img.onerror = () => {
-            console.error("Error cargando: " + nombre);
+            console.error("Error: " + nombre);
             cargarFotoIndividual(index + 1);
         };
 
-        img.src = `./assets/${nombre}`;
+        // Añadimos un parámetro aleatorio al final para evitar que la caché de la tele se líe
+        img.src = `./assets/${nombre}?v=${Date.now()}`;
     }
 
-    // Arrancamos la primera foto tras 1 segundo
-    setTimeout(() => {
-        cargarFotoIndividual(0);
-    }, 1000);
+    // Arrancamos
+    cargarFotoIndividual(0);
 }
 
 let letraDedi = 0;
